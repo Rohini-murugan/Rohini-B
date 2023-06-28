@@ -1,0 +1,30 @@
+create database task2;
+use task2;
+create table studentstable (
+  student_id int primary key,
+  student_name varchar(50),
+  age int,
+  date_of_admission date,
+  gender varchar(10)
+);
+select * from studentstable;
+
+
+ALTER TABLE studentstable ADD COLUMN email VARCHAR(50);
+select * from studentstable;
+
+INSERT INTO studentstable (student_id, student_name, age, date_of_admission, gender, email)
+VALUES
+  (1, 'John Doe', 20, '2021-09-01', 'Male', 'john.doe@example.com'),
+  (2, 'Jane Smith', 19, '2021-08-15', 'Female', 'jane.smith@example.com'),
+  (3, 'Michael Johnson', 21, '2021-07-05', 'Male', 'michael.johnson@example.com');
+  select * from studentstable;
+  
+UPDATE studentstable SET age = 22 WHERE student_id = 1;
+select * from studentstable;
+
+
+DELETE FROM studentstable WHERE student_id = 3;
+select * from studentstable;
+
+DROP TABLE studentstable
